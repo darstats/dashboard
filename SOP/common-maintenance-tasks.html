@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Fisheries Dashboard SOP</title>
-  <meta name="description" content="Fisheries Dashboard SOP" />
+  <title>7 Common Maintenance Tasks | Fisheries Dashboard SOP</title>
+  <meta name="description" content="7 Common Maintenance Tasks | Fisheries Dashboard SOP" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Fisheries Dashboard SOP" />
+  <meta property="og:title" content="7 Common Maintenance Tasks | Fisheries Dashboard SOP" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Fisheries Dashboard SOP" />
+  <meta name="twitter:title" content="7 Common Maintenance Tasks | Fisheries Dashboard SOP" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="project-structure.html"/>
+<link rel="prev" href="dynamic-date-configuration.html"/>
+<link rel="next" href="troubleshooting.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -192,22 +192,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Fisheries Dashboard SOP</h1>
-<p class="author"><em>Trevor Nishida</em></p>
-<p class="date"><em>2025-05-16</em></p>
+<div id="common-maintenance-tasks" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Common Maintenance Tasks<a href="common-maintenance-tasks.html#common-maintenance-tasks" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="update-the-acl-or-act" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Update the ACL or ACT<a href="common-maintenance-tasks.html#update-the-acl-or-act" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Find the ACL/ACT variable in the <code>setup</code> chunk (e.g., <code>ACL &lt;- 492000</code>) and change its value. Repeat for the fishery specific qmd file as well as the <code>index.qmd</code> file.</p>
 </div>
-<div id="introduction-open-me" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Introduction (OPEN ME)<a href="introduction-open-me.html#introduction-open-me" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This Standard Operating Procedure (SOP) outlines how to update and troubleshoot the annual catch limit commercial fisheries dashboard. This book is intended for the person responsible for maintaining and deploying the dashboard on a monthly basis. ACL monitoring is critical for both managers and fishers so they know when a fishery is approaching a limit and when harvest must stop. Monitoring of federally co-managed ACLs is performed by NOAA ’s Pacific Islands Fisheries Science center. Hawai’i fisheries have several ACLs, and the most commercially important ones are displayed in this dashboard. The ACL monitoring dashboard was created to increase transparency and improve communication about ACL status with co-managers and the public.</p>
+<div id="close-the-fishery" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Close the fishery<a href="common-maintenance-tasks.html#close-the-fishery" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Find the closure logic in the <code>setup</code> chunk (e.g., <code>uhuFisheryClosed &lt;- FALSE</code>) and change its value to true. Repeat for the fishery specific qmd file as well as the <code>index.qmd</code> file. When the fishery season lapses, this logic will have to be returned to FALSE in order to begin updating as normal again.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="project-structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dynamic-date-configuration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="troubleshooting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Fisheries Dashboard SOP</title>
-  <meta name="description" content="Fisheries Dashboard SOP" />
+  <title>4 Updating the Dashboard | Fisheries Dashboard SOP</title>
+  <meta name="description" content="4 Updating the Dashboard | Fisheries Dashboard SOP" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Fisheries Dashboard SOP" />
+  <meta property="og:title" content="4 Updating the Dashboard | Fisheries Dashboard SOP" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Fisheries Dashboard SOP" />
+  <meta name="twitter:title" content="4 Updating the Dashboard | Fisheries Dashboard SOP" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="project-structure.html"/>
+<link rel="prev" href="initial-setup.html"/>
+<link rel="next" href="uploading-the-updated-dashboard.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -192,22 +192,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Fisheries Dashboard SOP</h1>
-<p class="author"><em>Trevor Nishida</em></p>
-<p class="date"><em>2025-05-16</em></p>
+<div id="updating-the-dashboard" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Updating the Dashboard<a href="updating-the-dashboard.html#updating-the-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="downloading-up-to-date-data" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Downloading up-to-date Data<a href="updating-the-dashboard.html#downloading-up-to-date-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="assets/metabase.png" /><!-- --></p>
+<p>The data powering this dashboard is sourced directly from Metabase. A dedicated folder within Metabase contains all the necessary queries used in generating the dashboard visualizations and summaries.</p>
+<p>To update the data:</p>
+<ul>
+<li><p>Open each query in the Metabase folder.</p></li>
+<li><p>Click the Download button located in the bottom-right corner of the screen.</p>
+<ul>
+<li>It looks like a cloud with a down arrow</li>
+</ul></li>
+</ul>
+<p><img src="assets/download.png" /><!-- --></p>
+<ul>
+<li>Select the .csv option from the download format choices.</li>
+</ul>
+<p>After downloading, rename each file to match the expected filenames used in the dashboard code. In most cases, the appropriate filename matches the title of the Metabase query. For example, the query titled “Deep 7 FR” should be saved as <code>Deep7_FR.csv</code>. Consistent naming is critical for the code to run without errors. If you are unsure of what to rename the file, check the “data” folder in the D7 ACL Dashboard folder.</p>
 </div>
-<div id="introduction-open-me" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Introduction (OPEN ME)<a href="introduction-open-me.html#introduction-open-me" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This Standard Operating Procedure (SOP) outlines how to update and troubleshoot the annual catch limit commercial fisheries dashboard. This book is intended for the person responsible for maintaining and deploying the dashboard on a monthly basis. ACL monitoring is critical for both managers and fishers so they know when a fishery is approaching a limit and when harvest must stop. Monitoring of federally co-managed ACLs is performed by NOAA ’s Pacific Islands Fisheries Science center. Hawai’i fisheries have several ACLs, and the most commercially important ones are displayed in this dashboard. The ACL monitoring dashboard was created to increase transparency and improve communication about ACL status with co-managers and the public.</p>
+<div id="replacing-dashboard-data" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Replacing Dashboard Data<a href="updating-the-dashboard.html#replacing-dashboard-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Once all CSV files have been downloaded and appropriately renamed, navigate to the data folder within the D7 ACL Dashboard project directory. Replace the existing CSV files by dragging and dropping the newly downloaded files into the folder. When prompted, select <strong>“Replace the files in the destination”</strong> to ensure the dashboard uses the most up-to-date data.</p>
+<p><img src="assets/dataFolder.png" /><!-- --></p>
+</div>
+<div id="rendering-the-dashboard" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Rendering the Dashboard<a href="updating-the-dashboard.html#rendering-the-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Once the data files have been placed into the data folder, navigate to the D7 ACL Dashboard directory and find the <code>buildDashboard.R</code> file. Once located, open the file up, select all code (CTRL + A), and run all the code (CTRL + ENTER). This will knit each individual qmd file as well as deleting the old PDF data download before replacing it with a brand newly knitted one. During this time, the RStudio console will printout any errors which occur as well as printing a status message when the knitting is completed.</p>
+<p><img src="assets/console.png" /><!-- --></p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="project-structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="initial-setup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="uploading-the-updated-dashboard.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

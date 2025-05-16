@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Fisheries Dashboard SOP</title>
-  <meta name="description" content="Fisheries Dashboard SOP" />
+  <title>8 Troubleshooting | Fisheries Dashboard SOP</title>
+  <meta name="description" content="8 Troubleshooting | Fisheries Dashboard SOP" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Fisheries Dashboard SOP" />
+  <meta property="og:title" content="8 Troubleshooting | Fisheries Dashboard SOP" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Fisheries Dashboard SOP" />
+  <meta name="twitter:title" content="8 Troubleshooting | Fisheries Dashboard SOP" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="project-structure.html"/>
+<link rel="prev" href="common-maintenance-tasks.html"/>
+<link rel="next" href="code-best-practices.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -192,22 +192,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Fisheries Dashboard SOP</h1>
-<p class="author"><em>Trevor Nishida</em></p>
-<p class="date"><em>2025-05-16</em></p>
+<div id="troubleshooting" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Troubleshooting<a href="troubleshooting.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="plot-missing" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Plot Missing<a href="troubleshooting.html#plot-missing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Ensure <code>Plot_day</code> is correctly calculated.</li>
+<li>Confirm data is not filtered out by <code>cutoffDate</code>.</li>
+</ul>
 </div>
-<div id="introduction-open-me" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Introduction (OPEN ME)<a href="introduction-open-me.html#introduction-open-me" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This Standard Operating Procedure (SOP) outlines how to update and troubleshoot the annual catch limit commercial fisheries dashboard. This book is intended for the person responsible for maintaining and deploying the dashboard on a monthly basis. ACL monitoring is critical for both managers and fishers so they know when a fishery is approaching a limit and when harvest must stop. Monitoring of federally co-managed ACLs is performed by NOAA ’s Pacific Islands Fisheries Science center. Hawai’i fisheries have several ACLs, and the most commercially important ones are displayed in this dashboard. The ACL monitoring dashboard was created to increase transparency and improve communication about ACL status with co-managers and the public.</p>
+<div id="missing-gauge-or-nans" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Missing Gauge or NaNs<a href="troubleshooting.html#missing-gauge-or-nans" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Check the filtering logic in the gauge prep section.</li>
+<li>Verify ACT is not zero or <code>NA</code>.</li>
+</ul>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="project-structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="common-maintenance-tasks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="code-best-practices.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

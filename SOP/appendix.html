@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Fisheries Dashboard SOP</title>
-  <meta name="description" content="Fisheries Dashboard SOP" />
+  <title>10 Appendix | Fisheries Dashboard SOP</title>
+  <meta name="description" content="10 Appendix | Fisheries Dashboard SOP" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Fisheries Dashboard SOP" />
+  <meta property="og:title" content="10 Appendix | Fisheries Dashboard SOP" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Fisheries Dashboard SOP" />
+  <meta name="twitter:title" content="10 Appendix | Fisheries Dashboard SOP" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="code-best-practices.html"/>
 
-<link rel="next" href="project-structure.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -192,22 +192,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Fisheries Dashboard SOP</h1>
-<p class="author"><em>Trevor Nishida</em></p>
-<p class="date"><em>2025-05-16</em></p>
+<div id="appendix" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Appendix<a href="appendix.html#appendix" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="glossary" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Glossary<a href="appendix.html#glossary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><strong>ACL</strong>: Annual Catch Limit</li>
+<li><strong>ACT</strong>: Annual Catch Target</li>
+<li><strong>FY</strong>: Fishing Year</li>
+</ul>
 </div>
-<div id="introduction-open-me" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Introduction (OPEN ME)<a href="introduction-open-me.html#introduction-open-me" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This Standard Operating Procedure (SOP) outlines how to update and troubleshoot the annual catch limit commercial fisheries dashboard. This book is intended for the person responsible for maintaining and deploying the dashboard on a monthly basis. ACL monitoring is critical for both managers and fishers so they know when a fishery is approaching a limit and when harvest must stop. Monitoring of federally co-managed ACLs is performed by NOAA ’s Pacific Islands Fisheries Science center. Hawai’i fisheries have several ACLs, and the most commercially important ones are displayed in this dashboard. The ACL monitoring dashboard was created to increase transparency and improve communication about ACL status with co-managers and the public.</p>
+<div id="calc_julian-function" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> calc_julian function<a href="appendix.html#calc_julian-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="appendix.html#cb2-1" tabindex="-1"></a>calc_julian <span class="ot">&lt;-</span> <span class="cf">function</span>(dates, <span class="at">origin =</span> <span class="st">&quot;-01-01&quot;</span>) {</span>
+<span id="cb2-2"><a href="appendix.html#cb2-2" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">inherits</span>(dates, <span class="st">&quot;Date&quot;</span>)) dates <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(dates)</span>
+<span id="cb2-3"><a href="appendix.html#cb2-3" tabindex="-1"></a>  origins <span class="ot">&lt;-</span> <span class="fu">as.POSIXlt</span>(<span class="fu">paste0</span>(<span class="fu">substring</span>(dates, <span class="dv">1</span>, <span class="dv">4</span>), origin))</span>
+<span id="cb2-4"><a href="appendix.html#cb2-4" tabindex="-1"></a>  origins<span class="sc">$</span>year <span class="ot">&lt;-</span> origins<span class="sc">$</span>year <span class="sc">-</span> (<span class="fu">as.Date</span>(origins) <span class="sc">&gt;</span> dates)</span>
+<span id="cb2-5"><a href="appendix.html#cb2-5" tabindex="-1"></a>  <span class="fu">as.numeric</span>(dates <span class="sc">-</span> <span class="fu">as.Date</span>(origins) <span class="sc">+</span> <span class="dv">1</span><span class="dt">L</span>)</span>
+<span id="cb2-6"><a href="appendix.html#cb2-6" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="function-to-add-closure-date-to-acl-plots." class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Function to add closure date to ACL plots.<a href="appendix.html#function-to-add-closure-date-to-acl-plots." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="appendix.html#cb3-1" tabindex="-1"></a>add_fishery_closed_label <span class="ot">&lt;-</span> <span class="cf">function</span>(plot_object, closed, cutoff_day, y_position, <span class="at">label_text =</span> <span class="st">&quot;Fishery Closed&quot;</span>) {</span>
+<span id="cb3-2"><a href="appendix.html#cb3-2" tabindex="-1"></a>  <span class="cf">if</span> (closed) {</span>
+<span id="cb3-3"><a href="appendix.html#cb3-3" tabindex="-1"></a>    plot_object <span class="ot">&lt;-</span> plot_object <span class="sc">+</span></span>
+<span id="cb3-4"><a href="appendix.html#cb3-4" tabindex="-1"></a>      ggrepel<span class="sc">::</span><span class="fu">geom_text_repel</span>(</span>
+<span id="cb3-5"><a href="appendix.html#cb3-5" tabindex="-1"></a>        <span class="at">data =</span> <span class="fu">tibble</span>(<span class="at">Plot_day =</span> cutoff_day, <span class="at">CumLbs =</span> y_position),</span>
+<span id="cb3-6"><a href="appendix.html#cb3-6" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> Plot_day, <span class="at">y =</span> CumLbs, <span class="at">label =</span> label_text),</span>
+<span id="cb3-7"><a href="appendix.html#cb3-7" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">9</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">nudge_x =</span> <span class="dv">5</span>, <span class="at">nudge_y =</span> <span class="dv">500</span>,</span>
+<span id="cb3-8"><a href="appendix.html#cb3-8" tabindex="-1"></a>        <span class="at">min.segment.length =</span> <span class="dv">0</span></span>
+<span id="cb3-9"><a href="appendix.html#cb3-9" tabindex="-1"></a>      )</span>
+<span id="cb3-10"><a href="appendix.html#cb3-10" tabindex="-1"></a>  }</span>
+<span id="cb3-11"><a href="appendix.html#cb3-11" tabindex="-1"></a>  <span class="fu">return</span>(plot_object)</span>
+<span id="cb3-12"><a href="appendix.html#cb3-12" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="deep-7-data-prep-function" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Deep 7 Data Prep Function<a href="appendix.html#deep-7-data-prep-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="appendix.html#cb4-1" tabindex="-1"></a>prepare_data <span class="ot">&lt;-</span> <span class="cf">function</span>(df, date_col) {</span>
+<span id="cb4-2"><a href="appendix.html#cb4-2" tabindex="-1"></a>  df <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="appendix.html#cb4-3" tabindex="-1"></a>    <span class="fu">left_join</span>(tbl_sp, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;food_species_code&quot;</span> <span class="ot">=</span> <span class="st">&quot;SPECIES&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="appendix.html#cb4-4" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">SPEC_NAME =</span> <span class="fu">factor</span>(SPEC_NAME, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;OPAKAPAKA&quot;</span>, <span class="st">&quot;ONAGA&quot;</span>, <span class="st">&quot;EHU&quot;</span>, <span class="st">&quot;LEHI&quot;</span>, <span class="st">&quot;HAPUUPUU&quot;</span>, <span class="st">&quot;KALEKALE&quot;</span>, <span class="st">&quot;GINDAI&quot;</span>)),</span>
+<span id="cb4-5"><a href="appendix.html#cb4-5" tabindex="-1"></a>           <span class="co"># Use &quot;!!&quot; to remove quotes from character column and convert to date symbol with sym()</span></span>
+<span id="cb4-6"><a href="appendix.html#cb4-6" tabindex="-1"></a>           <span class="at">Year =</span> <span class="fu">year</span>(<span class="sc">!!</span><span class="fu">sym</span>(date_col)),</span>
+<span id="cb4-7"><a href="appendix.html#cb4-7" tabindex="-1"></a>           <span class="at">Month =</span> <span class="fu">month</span>(<span class="sc">!!</span><span class="fu">sym</span>(date_col)))</span>
+<span id="cb4-8"><a href="appendix.html#cb4-8" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="gauge-generation-function" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Gauge Generation Function<a href="appendix.html#gauge-generation-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="appendix.html#cb5-1" tabindex="-1"></a>load_gauge_data <span class="ot">&lt;-</span> <span class="cf">function</span>(label, caught, limit) {</span>
+<span id="cb5-2"><a href="appendix.html#cb5-2" tabindex="-1"></a>  caught <span class="ot">&lt;-</span> <span class="fu">round</span>(caught <span class="sc">/</span> limit, <span class="dv">3</span>)</span>
+<span id="cb5-3"><a href="appendix.html#cb5-3" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb5-4"><a href="appendix.html#cb5-4" tabindex="-1"></a>    <span class="at">fishery =</span> label,</span>
+<span id="cb5-5"><a href="appendix.html#cb5-5" tabindex="-1"></a>    <span class="at">part =</span> <span class="fu">c</span>(<span class="st">&quot;Complete&quot;</span>, <span class="st">&quot;Incomplete&quot;</span>),</span>
+<span id="cb5-6"><a href="appendix.html#cb5-6" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">c</span>(caught, <span class="dv">1</span> <span class="sc">-</span> caught),</span>
+<span id="cb5-7"><a href="appendix.html#cb5-7" tabindex="-1"></a>    <span class="at">start =</span> <span class="fu">lag</span>(<span class="fu">c</span>(caught, <span class="dv">1</span> <span class="sc">-</span> caught), <span class="at">default =</span> <span class="dv">0</span>) <span class="sc">*</span> pi,</span>
+<span id="cb5-8"><a href="appendix.html#cb5-8" tabindex="-1"></a>    <span class="at">end =</span> start <span class="sc">+</span> percent <span class="sc">*</span> pi</span>
+<span id="cb5-9"><a href="appendix.html#cb5-9" tabindex="-1"></a>  )</span>
+<span id="cb5-10"><a href="appendix.html#cb5-10" tabindex="-1"></a>}</span></code></pre></div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="code-best-practices.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="project-structure.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
