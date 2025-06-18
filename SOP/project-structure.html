@@ -23,7 +23,7 @@
 <meta name="author" content="Trevor Nishida" />
 
 
-<meta name="date" content="2025-05-16" />
+<meta name="date" content="2025-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,22 +158,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="dynamic-date-configuration.html"><a href="dynamic-date-configuration.html"><i class="fa fa-check"></i><b>6</b> Dynamic Date Configuration</a></li>
 <li class="chapter" data-level="7" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html"><i class="fa fa-check"></i><b>7</b> Common Maintenance Tasks</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#update-the-acl-or-act"><i class="fa fa-check"></i><b>7.1</b> Update the ACL or ACT</a></li>
-<li class="chapter" data-level="7.2" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#close-the-fishery"><i class="fa fa-check"></i><b>7.2</b> Close the fishery</a></li>
+<li class="chapter" data-level="7.1" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#update-the-acl-or-act"><i class="fa fa-check"></i><b>7.1</b> Update the ACL or ACT</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#example"><i class="fa fa-check"></i><b>7.1.1</b> Example:</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#close-the-fishery"><i class="fa fa-check"></i><b>7.2</b> Close the Fishery</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#example-1"><i class="fa fa-check"></i><b>7.2.1</b> Example:</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>8</b> Troubleshooting</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="troubleshooting.html"><a href="troubleshooting.html#plot-missing"><i class="fa fa-check"></i><b>8.1</b> Plot Missing</a></li>
 <li class="chapter" data-level="8.2" data-path="troubleshooting.html"><a href="troubleshooting.html#missing-gauge-or-nans"><i class="fa fa-check"></i><b>8.2</b> Missing Gauge or NaNs</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="code-best-practices.html"><a href="code-best-practices.html"><i class="fa fa-check"></i><b>9</b> Code Best Practices</a></li>
-<li class="chapter" data-level="10" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>10</b> Appendix</a>
+<li class="chapter" data-level="9" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>9</b> Appendix</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="appendix.html"><a href="appendix.html#glossary"><i class="fa fa-check"></i><b>10.1</b> Glossary</a></li>
-<li class="chapter" data-level="10.2" data-path="appendix.html"><a href="appendix.html#calc_julian-function"><i class="fa fa-check"></i><b>10.2</b> calc_julian function</a></li>
-<li class="chapter" data-level="10.3" data-path="appendix.html"><a href="appendix.html#function-to-add-closure-date-to-acl-plots."><i class="fa fa-check"></i><b>10.3</b> Function to add closure date to ACL plots.</a></li>
-<li class="chapter" data-level="10.4" data-path="appendix.html"><a href="appendix.html#deep-7-data-prep-function"><i class="fa fa-check"></i><b>10.4</b> Deep 7 Data Prep Function</a></li>
-<li class="chapter" data-level="10.5" data-path="appendix.html"><a href="appendix.html#gauge-generation-function"><i class="fa fa-check"></i><b>10.5</b> Gauge Generation Function</a></li>
+<li class="chapter" data-level="9.1" data-path="appendix.html"><a href="appendix.html#glossary"><i class="fa fa-check"></i><b>9.1</b> Glossary</a></li>
+<li class="chapter" data-level="9.2" data-path="appendix.html"><a href="appendix.html#calc_julian-function"><i class="fa fa-check"></i><b>9.2</b> calc_julian function</a></li>
+<li class="chapter" data-level="9.3" data-path="appendix.html"><a href="appendix.html#function-to-add-closure-date-to-acl-plots."><i class="fa fa-check"></i><b>9.3</b> Function to add closure date to ACL plots.</a></li>
+<li class="chapter" data-level="9.4" data-path="appendix.html"><a href="appendix.html#deep-7-data-prep-function"><i class="fa fa-check"></i><b>9.4</b> Deep 7 Data Prep Function</a></li>
+<li class="chapter" data-level="9.5" data-path="appendix.html"><a href="appendix.html#gauge-generation-function"><i class="fa fa-check"></i><b>9.5</b> Gauge Generation Function</a></li>
 </ul></li>
 </ul>
 
@@ -194,17 +199,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="project-structure" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">2</span> Project Structure<a href="project-structure.html#project-structure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><img src="assets/dashFiles.png" /><!-- --></p>
+<p><img src="assets/dashFiles.png" width="303" /></p>
 <p>The dashboard is composed of four individual Quarto pages:</p>
-<ul>
-<li><code>index.qmd</code></li>
-<li><code>deep_seven_dashboard.qmd</code></li>
-<li><code>kala_uhu_dashboard.qmd</code></li>
-<li><code>Uku_KonaCrab_dashboard.qmd</code></li>
-</ul>
-<p>Each page is named to clearly reflect the fishery or group of fisheries it covers. These files generate independent, fishery-specific dashboard views that allow for detailed tracking of catch metrics and seasonal progress. The <code>index.qmd</code> file functions as the main landing page and presents a consolidated overview, displaying gauge plots for all monitored fisheries in a single, user-friendly view. This enables quick status checks without needing to visit each individual fishery page.</p>
-<p>In addition to the Quarto dashboard files, the project includes a supporting R Markdown file: <code>DataTableDL.Rmd</code>. This file produces a downloadable PDF containing a comprehensive table of catch and sale statistics for all fisheries. It serves as a useful reference tool for internal reporting and stakeholder communication, and can be regenerated as needed using current data.</p>
-<p>Finally, the script <code>buildDashboard.R</code> automates the rendering process by compiling all Quarto (.qmd) and R Markdown (.Rmd) files. Running this script will regenerate the full suite of dashboard outputs and supporting materials, making updating the dashboard on a monthly basis no longer than a 15 minute process.</p>
+<table>
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>index.qmd</code></td>
+<td>Main landing page with overview</td>
+</tr>
+<tr class="even">
+<td><code>deep_seven_dashboard.qmd</code></td>
+<td>Dashboard for Deep Seven fishery</td>
+</tr>
+<tr class="odd">
+<td><code>kala_uhu_dashboard.qmd</code></td>
+<td>Dashboard for Kala and Uhu fisheries</td>
+</tr>
+<tr class="even">
+<td><code>Uku_KonaCrab_dashboard.qmd</code></td>
+<td>Dashboard for Uku and Kona Crab fisheries</td>
+</tr>
+</tbody>
+</table>
+<p>Each page is named to clearly reflect the fishery or group of fisheries it covers.</p>
+<p>These files generate independent, fishery-specific dashboard views that allow for detailed tracking of catch metrics and seasonal progress.</p>
+<p>The <code>index.qmd</code> file functions as the main landing page and presents a consolidated overview, displaying gauge plots for all monitored fisheries in a single, user-friendly view.</p>
+<p>This enables quick status checks without needing to visit each individual fishery page.</p>
+<p>In addition to the Quarto dashboard files, the project includes a supporting R Markdown file: <code>DataTableDL.Rmd</code>. This file produces a downloadable PDF containing a comprehensive table of catch and sale statistics for all fisheries.</p>
+<p>It serves as a useful reference tool for internal reporting and stakeholder communication, and can be regenerated as needed using current data.</p>
+<p>Finally, the script <code>buildDashboard.R</code> automates the rendering process by compiling all Quarto (.qmd) and R Markdown (.Rmd) files.</p>
+<p>Running this script will regenerate the full suite of dashboard outputs and supporting materials, making updating the dashboard on a monthly basis no longer than a 15 minute process.</p>
 </div>
             </section>
 

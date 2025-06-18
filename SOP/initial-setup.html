@@ -23,7 +23,7 @@
 <meta name="author" content="Trevor Nishida" />
 
 
-<meta name="date" content="2025-05-16" />
+<meta name="date" content="2025-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,22 +158,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="dynamic-date-configuration.html"><a href="dynamic-date-configuration.html"><i class="fa fa-check"></i><b>6</b> Dynamic Date Configuration</a></li>
 <li class="chapter" data-level="7" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html"><i class="fa fa-check"></i><b>7</b> Common Maintenance Tasks</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#update-the-acl-or-act"><i class="fa fa-check"></i><b>7.1</b> Update the ACL or ACT</a></li>
-<li class="chapter" data-level="7.2" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#close-the-fishery"><i class="fa fa-check"></i><b>7.2</b> Close the fishery</a></li>
+<li class="chapter" data-level="7.1" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#update-the-acl-or-act"><i class="fa fa-check"></i><b>7.1</b> Update the ACL or ACT</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#example"><i class="fa fa-check"></i><b>7.1.1</b> Example:</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#close-the-fishery"><i class="fa fa-check"></i><b>7.2</b> Close the Fishery</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="common-maintenance-tasks.html"><a href="common-maintenance-tasks.html#example-1"><i class="fa fa-check"></i><b>7.2.1</b> Example:</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>8</b> Troubleshooting</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="troubleshooting.html"><a href="troubleshooting.html#plot-missing"><i class="fa fa-check"></i><b>8.1</b> Plot Missing</a></li>
 <li class="chapter" data-level="8.2" data-path="troubleshooting.html"><a href="troubleshooting.html#missing-gauge-or-nans"><i class="fa fa-check"></i><b>8.2</b> Missing Gauge or NaNs</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="code-best-practices.html"><a href="code-best-practices.html"><i class="fa fa-check"></i><b>9</b> Code Best Practices</a></li>
-<li class="chapter" data-level="10" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>10</b> Appendix</a>
+<li class="chapter" data-level="9" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>9</b> Appendix</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="appendix.html"><a href="appendix.html#glossary"><i class="fa fa-check"></i><b>10.1</b> Glossary</a></li>
-<li class="chapter" data-level="10.2" data-path="appendix.html"><a href="appendix.html#calc_julian-function"><i class="fa fa-check"></i><b>10.2</b> calc_julian function</a></li>
-<li class="chapter" data-level="10.3" data-path="appendix.html"><a href="appendix.html#function-to-add-closure-date-to-acl-plots."><i class="fa fa-check"></i><b>10.3</b> Function to add closure date to ACL plots.</a></li>
-<li class="chapter" data-level="10.4" data-path="appendix.html"><a href="appendix.html#deep-7-data-prep-function"><i class="fa fa-check"></i><b>10.4</b> Deep 7 Data Prep Function</a></li>
-<li class="chapter" data-level="10.5" data-path="appendix.html"><a href="appendix.html#gauge-generation-function"><i class="fa fa-check"></i><b>10.5</b> Gauge Generation Function</a></li>
+<li class="chapter" data-level="9.1" data-path="appendix.html"><a href="appendix.html#glossary"><i class="fa fa-check"></i><b>9.1</b> Glossary</a></li>
+<li class="chapter" data-level="9.2" data-path="appendix.html"><a href="appendix.html#calc_julian-function"><i class="fa fa-check"></i><b>9.2</b> calc_julian function</a></li>
+<li class="chapter" data-level="9.3" data-path="appendix.html"><a href="appendix.html#function-to-add-closure-date-to-acl-plots."><i class="fa fa-check"></i><b>9.3</b> Function to add closure date to ACL plots.</a></li>
+<li class="chapter" data-level="9.4" data-path="appendix.html"><a href="appendix.html#deep-7-data-prep-function"><i class="fa fa-check"></i><b>9.4</b> Deep 7 Data Prep Function</a></li>
+<li class="chapter" data-level="9.5" data-path="appendix.html"><a href="appendix.html#gauge-generation-function"><i class="fa fa-check"></i><b>9.5</b> Gauge Generation Function</a></li>
 </ul></li>
 </ul>
 
@@ -205,7 +210,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="load-the-project" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Load the Project<a href="initial-setup.html#load-the-project" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To begin working with the dashboard, open the <code>D7 ACL Dashboard.Rproj</code> file. This RStudio Project file sets the appropriate working directory automatically, ensuring that all file paths resolve correctly relative to the project root. Opening the project also provides quick access to the codebase by displaying all associated .qmd, .Rmd, and .R files within the RStudio environment, allowing for efficient editing and navigation.</p>
+<p>To begin working with the dashboard, open the <code>D7 ACL Dashboard.Rproj</code> file.</p>
+<p>This RStudio Project file sets the appropriate working directory automatically, ensuring that all file paths resolve correctly relative to the project root.</p>
+<p>Opening the project also provides quick access to the codebase by displaying all associated .qmd, .Rmd, and .R files within the RStudio environment, allowing for efficient editing and navigation.</p>
 </div>
 </div>
             </section>
